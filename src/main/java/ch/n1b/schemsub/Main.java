@@ -19,6 +19,7 @@ public class Main {
 
     public static void main(String[] args) {
         if (args.length < 3) {
+            System.err.println("Too few arguments.");
             System.out.println("Usage: schemli <old blockid> <new blockid> <input schematic(s)> ");
             System.exit(1);
         }
@@ -30,7 +31,7 @@ public class Main {
             oldBlockIdTmp = Integer.parseInt(args[0]);
             newBlockIdTmp = Integer.parseInt(args[1]);
         } catch (NumberFormatException e) {
-            System.out.println("Cannot parse block ids: " + e.getMessage());
+            System.err.println("Cannot parse block ids: " + e.getMessage());
             e.printStackTrace();
             System.exit(1);
         }
